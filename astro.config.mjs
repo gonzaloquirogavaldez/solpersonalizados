@@ -5,4 +5,7 @@ export default defineConfig({
   site: 'https://solpersonalizados.com.ar',
   output: 'server',
   adapter: node({ mode: 'standalone' }),
+  security: {
+    checkOrigin: false,
+  },
 });
