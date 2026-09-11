@@ -1,0 +1,100 @@
+---
+import '../styles/global.css';
+import { gym } from '../config/site';
+import logo from '../assets/logo marisol.png';
+import heroVideo from '../assets/marisol.mp4';
+
+const classes = [
+  { icon: '✦', title: 'Entrenamiento personalizado', text: 'Un plan pensado para tus objetivos, tu experiencia y tu momento actual.', color: 'sage' },
+  { icon: '◌', title: 'Fuerza y movilidad', text: 'Mejorá tu rendimiento, postura y calidad de vida con acompañamiento.', color: 'sand' },
+  { icon: '⌁', title: 'Seguimiento cercano', text: 'Progresá con una mirada profesional que se adapta a vos.', color: 'rose' },
+];
+
+const posts = [
+  { date: '12 JUN 2024', title: 'Pequeños rituales para una mañana más presente', image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=900&q=85' },
+  { date: '28 MAY 2024', title: 'Cómo crear un rincón de calma en casa', image: 'https://images.unsplash.com/photo-1545205597-3d9d02c29597?auto=format&fit=crop&w=900&q=85' },
+  { date: '08 MAY 2024', title: 'El descanso también es parte de la práctica', image: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=900&q=85' },
+];
+---
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content="Sol Personalizados — entrenamiento personal para alcanzar tus objetivos." />
+    <title>Sol Personalizados — Marisol Chavez</title>
+  </head>
+  <body>
+    <header class="site-header" id="inicio">
+      <a class="brand logo-brand" href="#inicio" aria-label={`${gym.name}, inicio`}><img src={logo.src} alt="Marisol Chavez Personal Trainer" /></a>
+      <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="#nosotros">Nosotros</a>
+        <a href="#clases">Clases</a>
+        <a href={gym.instagram} target="_blank" rel="noreferrer">Instagram ↗</a>
+        <a class="nav-cta" href="#contacto">Comenzar <span>↗</span></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero section-shell">
+        <div class="hero-copy">
+          <p class="eyebrow">ENTRENAMIENTO PERSONALIZADO <span>✳</span></p>
+          <h1>Entrená<br /><em>a tu medida.</em></h1>
+          <p class="hero-intro">En {gym.name} diseñamos un entrenamiento que respeta tu historia, tus objetivos y tu ritmo. Más fuerza, más confianza, más vos.</p>
+          <a class="button button-dark" href="/registro">Quiero inscribirme <span>↗</span></a>
+          <div class="hero-note"><span class="avatar-stack"><i></i><i></i><i></i></span><span>Seguimiento cercano<br />en cada etapa</span></div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-circle"></div>
+          <video autoplay muted loop playsinline aria-label="Entrenamiento personalizado en el gimnasio"><source src={heroVideo} type="video/mp4" /></video>
+          <span class="vertical-label">FUERZA · SALUD · CONFIANZA</span>
+          <div class="sun-mark">✦</div>
+        </div>
+      </section>
+
+      <section class="marquee"><div>ENTRENÁ <span>✦</span> CUIDÁ TU CUERPO <span>✦</span> ALCANZÁ TUS OBJETIVOS <span>✦</span> ENTRENÁ <span>✦</span></div></section>
+
+      <section class="intro section-shell" id="nosotros">
+        <div class="section-label">01 <span></span> SOBRE SOL PERSONALIZADOS</div>
+        <div class="intro-content"><h2>Tu objetivo no tiene que parecerse al de nadie. <em>Tu plan también es personal.</em></h2><div><p>Trabajamos con acompañamiento real y propuestas adaptadas para que entrenar sea una parte posible y sostenible de tu vida.</p><a class="text-link" href="/registro">Conocé cómo ingresar <span>↗</span></a></div></div>
+      </section>
+
+      <section class="classes section-shell" id="clases">
+        <div class="section-heading"><div><div class="section-label">02 <span></span> NUESTRA PROPUESTA</div><h2>Entrenamientos<br /><em>que se adaptan.</em></h2></div><p>Un espacio cuidado, objetivos claros y un equipo que te acompaña en serio.</p></div>
+        <div class="class-grid">{classes.map((item, index) => <article class={`class-card ${item.color}`}><div class="card-number">0{index + 1}</div><div class="class-icon">{item.icon}</div><h3>{item.title}</h3><p>{item.text}</p><a href="#contacto" aria-label={`Conocer ${item.title}`}>↗</a></article>)}</div>
+      </section>
+
+      <section class="schedule section-shell" id="horarios">
+        <div class="section-heading"><div><div class="section-label">03 <span></span> HORARIOS</div><h2>Entrená cuando<br /><em>te quede mejor.</em></h2></div><p>De lunes a viernes · clases de 1:30 h</p></div>
+        <div class="schedule-grid">
+          <div class="schedule-day"><span>LUNES A VIERNES</span><strong>09:00 — 10:30</strong><small>Turno mañana</small></div>
+          <div class="schedule-day"><span>LUNES A VIERNES</span><strong>10:30 — 12:00</strong><small>Turno mañana</small></div>
+          <div class="schedule-day"><span>LUNES A VIERNES</span><strong>14:00 — 15:30</strong><small>Turno tarde</small></div>
+          <div class="schedule-day"><span>LUNES A VIERNES</span><strong>16:00 — 17:30</strong><small>Turno tarde</small></div>
+          <div class="schedule-day"><span>LUNES A VIERNES</span><strong>18:00 — 19:30</strong><small>Turno tarde</small></div>
+          <div class="schedule-day"><span>LUNES A VIERNES</span><strong>20:00 — 21:30</strong><small>Turno noche</small></div>
+        </div>
+      </section>
+
+      <section class="quote-section"><div class="quote-symbol">“</div><blockquote>No se trata de entrenar más.<br /><em>Se trata de entrenar mejor.</em></blockquote><p>— El método {gym.name}</p></section>
+
+      <section class="location section-shell" id="ubicacion"><div class="section-heading"><div><div class="section-label">04 <span></span> UBICACIÓN</div><h2>Encontranos<br /><em>en San Luis.</em></h2></div><p>Visitá Sol Personalizados y entrená en un espacio pensado para vos.</p></div><div class="map-frame"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26673.15071294326!2d-66.36551712337281!3d-33.31505483804953!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95d43b003b52c63b%3A0xe28404f26d700f2d!2sSol.chdpersonalizados!5e0!3m2!1ses!2sar!4v1789088466273!5m2!1ses!2sar" width="600" height="450" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="strict-origin-when-cross-origin" title="Ubicación de Sol Personalizados"></iframe></div></section>
+
+      <section class="teachers section-shell" id="profes"><div class="section-heading"><div><div class="section-label">03 <span></span> QUIENES TE ACOMPAÑAN</div><h2>Guías con<br /><em>presencia.</em></h2></div><a class="text-link" href="#contacto">Conoce al equipo <span>↗</span></a></div><div class="teacher-grid"><div class="teacher-main"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=85" alt="Profesora de yoga sonriendo" /><div><strong>Marina Soler</strong><span>Yoga & movimiento</span></div></div><div class="teacher-small"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=700&q=85" alt="Profesora de meditación" /><div><strong>Lucía Requena</strong><span>Meditación</span></div></div><div class="teacher-small"><img src="https://images.unsplash.com/photo-1558898479-33c0057a5d12?auto=format&fit=crop&w=700&q=85" alt="Profesora de respiración" /><div><strong>Eva Luna</strong><span>Respiración</span></div></div></div></section>
+
+      <section class="journal section-shell" id="journal"><div class="section-heading"><div><div class="section-label">04 <span></span> DESDE EL JOURNAL</div><h2>Ideas para vivir<br /><em>más despacio.</em></h2></div><a class="text-link" href="#journal">Ver todos los artículos <span>↗</span></a></div><div class="post-grid">{posts.map(post => <article class="post"><img src={post.image} alt={post.title} /><p>{post.date}</p><h3>{post.title}</h3><a href="#contacto">Leer artículo <span>↗</span></a></article>)}</div></section>
+
+      <section class="contact section-shell" id="contacto"><div><div class="section-label">05 <span></span> EMPEZÁ HOY</div><h2>Tu próximo<br />paso <em>es acá.</em></h2></div><div class="contact-card"><p>Completá el registro de ingreso y recibí el paquete documental del gimnasio.</p><a class="button button-dark" href="/registro">Ir al formulario <span>↗</span></a><small>Antes de entrenar, conocé tus derechos, responsabilidades y las normas de uso.</small></div></section>
+    </main>
+
+    <footer><div class="footer-top"><a class="brand logo-brand" href="#inicio"><img src={logo.src} alt="Marisol Chavez Personal Trainer" /></a><p>Entrenamiento pensado<br /><em>para vos.</em></p><div class="socials"><a href={gym.instagram} target="_blank" rel="noreferrer">Instagram ↗</a><a href="/registro">Registrarme</a><a href="#contacto">Contacto</a></div></div><div class="footer-bottom"><span>© 2026 {gym.name}</span><span>Entrená con intención <b>✦</b></span><a href="#inicio">Volver arriba ↑</a></div></footer>
+    <a class="whatsapp-float" href="https://wa.me/5492664644901?text=Hola%20Marisol%2C%20quiero%20consultar%20por%20entrenamiento%20personalizado" target="_blank" rel="noreferrer" aria-label="Contactar por WhatsApp"><span>◔</span><b>WhatsApp</b></a>
+    <script>
+      const toggle = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('.nav');
+      toggle?.addEventListener('click', () => { const open = nav.classList.toggle('is-open'); toggle.setAttribute('aria-expanded', String(open)); });
+      nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => nav.classList.remove('is-open')));
+    </script>
+  </body>
+</html>
