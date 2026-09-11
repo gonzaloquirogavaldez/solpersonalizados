@@ -8,6 +8,8 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "astro": "latest"
+    "@astrojs/node": "^11.1.5",
+    "astro": "latest",
+    "nodemailer": "^10.0.3"
   }
 }
